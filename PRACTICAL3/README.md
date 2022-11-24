@@ -1,64 +1,20 @@
 ## Practical no 3
 # AIM: Using Cisco Packet Tracer Perform ACL over a network
 ## INTRODUCTION
-### 1)What is static code analysis and its benefites?
-Static code analysis refers to a specific type of computer program debugging that can test the code without the need to execute the program.
-This enables a thorough comprehension of the code structure and can even help testers ensure that the code remains compliant with various industry standards.
-BENEFITS:
-It can be done in an offline environment.
-It can eveluate all the code in an application, increasing code equality.
+### 1)What is static Access contral list?
+Access-list (ACL) is a set of rules defined for controlling network traffic and reducing network attacks. ACLs are used to filter traffic based on the set of rules defined for the incoming or outgoing of the network. 
 
-### 2)What is Vulnerability?
-Vulnerability Analysis is one of the most important phases of Hacking. 
-It is done after Information Gathering and is one of the crucial steps to be done while designing an application.
-The cyber-world is filled with a lot of vulnerabilities which are the loopholes in a program through which hacker executes an attack.
+### 2)What are types of ACL?
+There are two main different types of Access-list namely: 
+(i)Standard Access-list – 
+These are the Access-list that are made using the source IP address only. These ACLs permit or deny the entire protocol suite. They don’t distinguish between the IP traffic such as TCP, UDP, HTTPS, etc. By using numbers 1-99 or 1300-1999, the router will understand it as a standard ACL and the specified address as the source IP address. 
+ 
+(ii)Extended Access-list – 
+These are the ACL that uses source IP, Destination IP, source port, and Destination port. These types of ACL, we can also mention which IP traffic should be allowed or denied. These use range 100-199 and 2000-2699.
 
+Also, there are two categories of access-list:  
 
-### 3)What is Flawfinder?
-FlawFinder is a python based tool that helps in finding vulnerabilities in a C/C++ source code. 
-It examines the source code and gives the list of possible vulnerabilities/flaws in the code as the output.
+(i)Numbered access-list – These are the access list that cannot be deleted specifically once created i.e if we want to remove any rule from an Access-list then this is not permitted in the case of the numbered access list. If we try to delete a rule from the access list then the whole access list will be deleted. The numbered access-list can be used with both standard and extended access lists. 
+ 
+(ii)Named access list – In this type of access list, a name is assigned to identify an access list. It is allowed to delete a named access list, unlike numbered access list. Like numbered access lists, these can be used with both standards and extended access lists. 
 
-# IMPLEMENTATION
-### Step 1) Install Python and set the path.
-
-### STEP 2) Install Flawfinder
-Open commomnd prompt window and execute the following path.
-For Windows OS, this tool can be directly installed using the pip command-
-```bash
-pip install flawfinder
-```
-After successfully installing it locate it.
-```bash
-where.exe flawfinder
-```
-### Step3) Download the flawfinder zip file and keep in drive(extract it)
-
-### Step4) Open the Flawinder folder and run the test. 
-
-# USAGE
-### Patchedcode.py Vulnerability_code.py
-
-## Vulnerable code with Output
-```bash
-ANALYSIS SUMMARY:
-
-Hits = 2
-Lines analyzed = 11 in approximately 0.02 seconds (522 lines/second)
-Physical Source Lines of Code (SLOC) = 10
-Hits@level = [0]   1 [1]   0 [2]   1 [3]   0 [4]   1 [5]   0
-Hits@level+ = [0+]   3 [1+]   2 [2+]   2 [3+]   1 [4+]   1 [5+]   0
-Hits/KSLOC@level+ = [0+] 300 [1+] 200 [2+] 200 [3+] 100 [4+] 100 [5+]   0
-Minimum risk level = 1
-```
-## Patched code with Output
-```bash
-ANALYSIS SUMMARY:
-
-No hits found.
-Lines analyzed = 11 in approximately 0.02 seconds (663 lines/second)
-Physical Source Lines of Code (SLOC) = 10
-Hits@level = [0]   1 [1]   0 [2]   0 [3]   0 [4]   0 [5]   0
-Hits@level+ = [0+]   1 [1+]   0 [2+]   0 [3+]   0 [4+]   0 [5+]   0
-Hits/KSLOC@level+ = [0+] 100 [1+]   0 [2+]   0 [3+]   0 [4+]   0 [5+]   0
-Minimum risk level = 1
-```
